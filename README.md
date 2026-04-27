@@ -23,3 +23,17 @@ Objective: Gain user and root access
 
  ## 1. Reconnaissance
 Nmap Scan
+
+nmap -sC -sV -oN scan.txt <TARGET_IP>
+
+## 2. Web Enumeration
+Access Website
+Open browser → http://<TARGET_IP>
+Found a basic webpage (island theme / Arrow reference)
+
+# Directory Brute Force
+gobuster dir -u http://<TARGET_IP> -w /usr/share/wordlists/dirb/common.txt
+Discovered:
+/island
+/island/2100
+Hidden directories with encoded hints
