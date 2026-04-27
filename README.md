@@ -3,16 +3,22 @@ This flag confirms that initial access was successfully achieved. It is usually 
 
 ## Overview
 Platform: TryHackMe
+
 Room: Lian Yu
+
 Difficulty: Easy–Medium
+
 Objective: Gain user and root access
 
 
 ### Methodology
-Reconnaissance (Nmap)
-Enumeration (Web + Files)
-Initial Access
-Privilege Escalation
+1. Reconnaissance (Nmap)
+ 
+2. Enumeration (Web + Files)
+   
+3. Initial Access
+  
+4. Privilege Escalation
 
 
  ## 1. Reconnaissance
