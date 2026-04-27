@@ -42,7 +42,7 @@ Which is:
 ## 2. Web Enumeration
 Access Website
 Open browser → http://10.48.158.92
-![Nmap Scan Results](screenshot/websitepage.png)
+![Nmap Scan Results](screenshot/website-page.png)
 
 Found a basic webpage (island theme / Arrow reference)
 
