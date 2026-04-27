@@ -111,7 +111,9 @@ Possible password hints : !#th3h00d
 
 Login / SSH
 
+```bash
 ssh vigilante@10.48.158.92
+```
 
 ![Nmap Scan Results](screenshot/vigilante.png)
 
@@ -130,7 +132,7 @@ get <<images name>>
 But only Leave_me_alone.png cannot be open:
 
 
-![Nmap Scan Results](screenshot/leavemealone.png)
+![Nmap Scan Results](screenshot/leaveemealone.png)
 
 So we use tools Hexeditor to see what wrong with the picture header:
 
@@ -156,11 +158,54 @@ Used decoded credentials : password
 
 Successfully extract ss.zip file
 
+There is 2 file:
+
+1. passwd.txt
+2. shado
+
+Open the passwd.txt :
+
+![Nmap Scan Results](screenshot/ss.zip.png) 
+
+Just a note saying Visa to landing at the Lian_Yu
+
+Open the shado: 
+
+![Nmap Scan Results](screenshot/shado.png) 
+
+Code : M3tahuman
+
+After using : cd.. we found there is other user name slade 
+
+![Nmap Scan Results](screenshot/slade.png) 
+
+Using the Code just now login ssh slade
+
+```bash
+ssh vigilante@10.48.158.92
+```
+
+![Nmap Scan Results](screenshot/ssh%20slade.png) 
+
+Successfully Login to Slade. 
+
 
  ## 4. User Flag
+
+```bash
+ls-la
+```
+found a file name : user.txt
+
+Open it using :
+
+```bash
 cat user.txt
+```
 
 ✅ User flag obtained
+
+THM{P30P7E_K33P_53CRET5__C0MPUT3R5_D0N'T}
 
 ##  5. Privilege Escalation
 Check Sudo Permissions
