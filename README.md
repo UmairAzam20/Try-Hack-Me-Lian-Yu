@@ -103,14 +103,59 @@ Decoded using Cyberchef :
 ```bash
 !#th3h00d
 ```
-Username
-Possible password hints
+Username: vigilante
+Possible password hints : !#th3h00d
+
 
 ## 3. Initial Access
+
 Login / SSH
-ssh <username>@<TARGET_IP>
-Used decoded credentials
-Successfully gained user access
+
+ssh vigilante@10.48.158.92
+
+![Nmap Scan Results](screenshot/vigilante.png)
+
+We found 3 images in the Directory:
+
+1. Leabve_me_alone.png
+2. Queen's_Gambit.png
+3. aa.jpg
+
+Using get to download all the pictures :
+
+```bash
+get <<images name>>
+```
+
+But only Leave_me_alone.png cannot be open:
+
+
+![Nmap Scan Results](screenshot/leavemealone.png)
+
+So we use tools Hexeditor to see what wrong with the picture header:
+
+Actually its a wrong header but i forgot to screenshot and we changed it to the the right one:
+
+![Nmap Scan Results](screenshot/hexedit.png) 
+
+How do we now what the right one? we search it the photo extension magic number:
+
+![Nmap Scan Results](screenshot/png%20magic%20number.png) 
+
+After that we can successfully open the Leave_me_alone.png
+
+![Nmap Scan Results](screenshot/afterleavemealone.png) 
+
+The picture give a clue with a text : password
+
+Use steghide tool to find if the picture have something behind and we found it at aa.jpg
+
+Used decoded credentials : password
+
+![Nmap Scan Results](screenshot/steghide.png) 
+
+Successfully extract ss.zip file
+
 
  ## 4. User Flag
 cat user.txt
