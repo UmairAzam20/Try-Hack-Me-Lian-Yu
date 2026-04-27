@@ -30,20 +30,60 @@ nmap -sV -sC -Pn -vv 10.48.158.92
 
 Find Open Port Available:
 
+Which is:
+1. Port 21 ftp
+2. Port 22 ssh
+3. Port 80 http
+4. Port 111 rcpbind
+   
 ![Nmap Scan Results](screenshot/nmap2.png)
 ![Nmap Scan Results](screenshot/nmap3.png)
 
 ## 2. Web Enumeration
 Access Website
-Open browser → http://<TARGET_IP>
+Open browser → http://10.48.158.92
+![Nmap Scan Results](screenshot/websitepage.png)
+
 Found a basic webpage (island theme / Arrow reference)
 
 Directory Brute Force
-
-gobuster dir -u http://<TARGET_IP> -w /usr/share/wordlists/dirb/common.txt
+```bash
+gobuster dir -u http://10.48.158.92 -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt
+```
 Discovered:
 /island
+
+![Nmap Scan Results](screenshot/island.png)
+
+And then open the browser  → http://10.48.158.92/island
+
+![Nmap Scan Results](screenshot/islandboy.png)
+
+I Forgot to ScreenShot it, Actually if you view the page source you will get the code which is 'vigilante' 
+
 /island/2100
+
+```bash
+gobuster dir -u http://10.48.158.92/island -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt 
+```
+![Nmap Scan Results](screenshot/2100.png)
+
+And then open the browser  → http://10.48.158.92/island/2100
+
+![Nmap Scan Results](screenshot/2100web.png)
+
+View the page source we found a clue: 
+
+![Nmap Scan Results](screenshot/2100clue.png)
+
+.ticket
+Using -x (Extension for the .ticket)
+
+```bash
+gobuster dir -u http://10.48.158.92/island/2100 -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -x .ticket
+```
+![Nmap Scan Results](screenshot/.ticket-clue.png)
+
 Hidden directories with encoded hints
 
 Clue Analysis
