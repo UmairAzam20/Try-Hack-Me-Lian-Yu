@@ -42,11 +42,13 @@ Which is:
 ## 2. Web Enumeration
 Access Website
 Open browser → http://10.48.158.92
+
 ![Nmap Scan Results](screenshot/website%20page.png)
 
 Found a basic webpage (island theme / Arrow reference)
 
 Directory Brute Force
+
 ```bash
 gobuster dir -u http://10.48.158.92 -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt
 ```
@@ -66,6 +68,7 @@ I Forgot to ScreenShot it, Actually if you view the page source you will get the
 ```bash
 gobuster dir -u http://10.48.158.92/island -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt 
 ```
+
 ![Nmap Scan Results](screenshot/2100.png)
 
 And then open the browser  → http://10.48.158.92/island/2100
@@ -88,15 +91,18 @@ Hidden directories with encoded hints:
 
 /green_arrow.ticket
 
-![Nmap Scan Results](screenshot/.ticket%20token.png)
+![Nmap Scan Results](screenshot/.ticket%20clue.png)
 
 Clue Analysis
 
 Found Base58 encoded strings
 Decoded using Cyberchef :
 
+![Nmap Scan Results](screenshot/.ticket%20based58.png)
 
-
+```bash
+!#th3h00d
+```
 Username
 Possible password hints
 
