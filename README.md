@@ -42,7 +42,7 @@ Which is:
 ## 2. Web Enumeration
 Access Website
 Open browser → http://10.48.158.92
-![Nmap Scan Results](screenshot/website-page.png)
+![Nmap Scan Results](screenshot/website%20page.png)
 
 Found a basic webpage (island theme / Arrow reference)
 
@@ -82,15 +82,20 @@ Using -x (Extension for the .ticket)
 ```bash
 gobuster dir -u http://10.48.158.92/island/2100 -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -x .ticket
 ```
-![Nmap Scan Results](screenshot/.ticket-clue.png)
+![Nmap Scan Results](screenshot/.ticket%20clue.png)
 
-Hidden directories with encoded hints
+Hidden directories with encoded hints:
+
+/green_arrow.ticket
+
+![Nmap Scan Results](screenshot/.ticket%20token.png)
 
 Clue Analysis
 
-Found Base64 encoded strings
-Decoded using:
-echo "encoded_string" | base64 -d
+Found Base58 encoded strings
+Decoded using Cyberchef :
+
+
 
 Username
 Possible password hints
