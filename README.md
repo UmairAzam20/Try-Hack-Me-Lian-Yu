@@ -165,7 +165,7 @@ There is 2 file:
 
 Open the passwd.txt :
 
-![Nmap Scan Results](screenshot/ss.zip.png) 
+![Nmap Scan Results](screenshot/sszip.png) 
 
 Just a note saying Visa to landing at the Lian_Yu
 
@@ -252,8 +252,9 @@ SUID binaries are critical for privilege escalation
 GTFOBins is extremely useful
 
 ## Tools Used
-Nmap
-Gobuster
-Base58
-SSH
-GTFOBins
+1. Nmap
+2. Gobuster
+3. Cyberchef
+4. SSH
+5. GTFOBins
+
