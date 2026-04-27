@@ -24,7 +24,13 @@ Objective: Gain user and root access
  ## 1. Reconnaissance
 Nmap Scan
 
-nmap -sC -sV -oN scan.txt <TARGET_IP>
+```bash
+nmap -sV -sC -Pn -vv 10.48.158.92
+```
+
+Find Open Port Available:
+
+
 
 ## 2. Web Enumeration
 Access Website
