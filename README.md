@@ -30,7 +30,8 @@ nmap -sV -sC -Pn -vv 10.48.158.92
 
 Find Open Port Available:
 
-
+![Nmap Scan Results](screenshot/nmap2.png)
+![Nmap Scan Results](screenshot/nmap3.png)
 
 ## 2. Web Enumeration
 Access Website
