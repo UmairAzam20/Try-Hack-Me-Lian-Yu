@@ -182,7 +182,7 @@ After using : cd.. we found there is other user name slade
 Using the Code just now login ssh slade
 
 ```bash
-ssh vigilante@10.48.158.92
+ssh slade@10.48.158.92
 ```
 
 ![Nmap Scan Results](screenshot/ssh%20slade.png) 
